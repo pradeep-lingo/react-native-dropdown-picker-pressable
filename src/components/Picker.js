@@ -20,10 +20,9 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
 } from 'react-native';
-
+import { Pressable } from './Pressable';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import {
   ASCII_CODE,
@@ -1707,9 +1706,9 @@ function Picker({
     else Component = <Image source={ICON.CLOSE} style={_closeIconStyle} />;
 
     return (
-      <TouchableOpacity style={_closeIconContainerStyle} onPress={onPressClose}>
+      <Pressable style={_closeIconContainerStyle} onPress={onPressClose}>
         {Component}
-      </TouchableOpacity>
+      </Pressable>
     );
   }, [
     listMode,
@@ -1979,7 +1978,7 @@ function Picker({
 
   return (
     <View style={_containerStyle} {...containerProps}>
-      <TouchableOpacity
+      <Pressable
         style={_style}
         onPress={__onPress}
         onLayout={__onLayout}
@@ -1990,7 +1989,7 @@ function Picker({
         testID={testID}>
         {_BodyComponent}
         {_ArrowComponent}
-      </TouchableOpacity>
+      </Pressable>
 
       {DropDownBodyComponent}
     </View>
